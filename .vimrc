@@ -24,8 +24,8 @@ set number
 " Show file stats
 set ruler
 
-" Blink cursor on error instead of beeping (grr)
-set visualbell
+" Disable error sound and visual bells
+set belloff=all
 
 " Encoding
 set encoding=utf-8
@@ -98,3 +98,9 @@ let g:solarized_termtrans=1
 " put https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim
 " in ~/.vim/colors/ and uncomment:
 " colorscheme solarized
+
+" Map typos for saving and quitting
+:command WQ wq
+:command Wq wq
+:command W w
+:command Q q
