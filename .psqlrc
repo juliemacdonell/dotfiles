@@ -1,0 +1,25 @@
+-- Source: https://thoughtbot.com/blog/improving-the-command-line-postgres-experience
+
+-- Stylize the prompt.
+--   - The %[..%] sets the default prompt color to a bold black.
+--   - %M is “The full host name (with domain name) of the database server, or [local] if the connection is over a Unix domain socket”.
+--   - %n is the database user name.
+--   - %/ is the database name.
+--   - %R is “normally =, but ^ if in single-line mode, and ! if the session is disconnected from the database”. It’s nice to see when you’re disconnected.
+--   - The final %[...%] resets the color to non-bold black.
+--   - %# is # if you’re a superuser, otherwise >.
+\set PROMPT1 '%[%033[1m%]%M %n@%/%R%[%033[0m%]%# '
+
+
+-- Source: https://phili.pe/posts/postgresql-on-the-command-line/
+
+-- Write keywords in lowercase and when pressing tab they’ll be completed and transformed to uppercase.
+\set COMP_KEYWORD_CASE upper
+
+-- Use the table layout only if there’s enough space and otherwise resort to the extended display mode.
+\x auto
+
+-- Render NULL values as ¤.
+\pset null ¤
+
+
